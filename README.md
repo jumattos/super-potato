@@ -7,3 +7,4 @@ A test repository, ever changing.
 - potato
 - carrot
 - broccoli
+- tomato
