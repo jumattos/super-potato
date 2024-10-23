@@ -1,0 +1,36 @@
+$schema: "1.0"
+name: "checkout-on-devbox"
+tasks:
+  - name: choco
+    description: Install dotnet cli.
+    parameters:
+      package: dotnet
+      ignoreChecksums: false
+  - name: powershell
+    description: Install dotnet-vs.
+    parameters:
+      command: dotnet tool update -g dotnet-vs
+  - name: winget
+    description: Install Visual Studio.
+    parameters:
+      package: Microsoft.VisualStudio.2022.Enterprise
+      runAsUser: false
+  - name: git-clone
+    description: Clone the repository with the specified branch checked out.
+    parameters:
+      repositoryUrl: https://github.com/jumattos/super-potato.git
+      directory: C:\\Workspaces
+      branch: colleagues-branch
+      # TODO: pass in a PAT here so clone doesn't get stuck on auth
+  - name: powershell
+    # Clone is happening in an admin account, causing "dubious ownership".
+    # However, marking it as trusted won't work (as we're still in the admin account).
+    # We need a way to run this command as the user (or clone as the user).
+    description: Mark the repository as trusted.
+    parameters:
+      command: git config --global --add safe.directory "C:/Workspaces/super-potato"
+    # How can we start VS as the user? (for that, dotnet-vs needs to be installed too)
+  - name: powershell
+    description: Open VS with the cloned repository.
+    parameters:
+      command: vs "C:\\Workspaces\\super-potato" /Command "Team.Git.ReviewPullRequest"
