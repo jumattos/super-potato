@@ -62,17 +62,47 @@
         <p class="subtitle">A simple web app showcasing the magnificent potato</p>
         
         <svg width="300" height="200" viewBox="0 0 300 200" class="potato-image">
-            <!-- Potato body -->
+            <!-- Cape -->
+            <path d="M80 90 Q60 70 50 50 Q70 40 90 50 Q100 70 110 90 Z" fill="#DC143C" stroke="#B22222" stroke-width="2"/>
+            <path d="M190 90 Q220 70 230 50 Q210 40 190 50 Q180 70 170 90 Z" fill="#DC143C" stroke="#B22222" stroke-width="2"/>
+            
+            <!-- Potato body (heroic stance) -->
             <ellipse cx="150" cy="100" rx="80" ry="60" fill="#D2B48C" stroke="#8B7355" stroke-width="2"/>
-            <!-- Potato eyes/spots -->
-            <circle cx="120" cy="80" r="4" fill="#8B4513"/>
-            <circle cx="180" cy="85" r="3" fill="#8B4513"/>
-            <circle cx="140" cy="120" r="3" fill="#8B4513"/>
-            <circle cx="170" cy="110" r="2" fill="#8B4513"/>
-            <!-- Potato dimples -->
-            <ellipse cx="110" cy="100" rx="3" ry="2" fill="#C8A882"/>
-            <ellipse cx="190" cy="95" rx="4" ry="2" fill="#C8A882"/>
-            <ellipse cx="160" cy="130" rx="2" ry="3" fill="#C8A882"/>
+            
+            <!-- Super emblem on chest -->
+            <circle cx="150" cy="90" r="20" fill="#FFD700" stroke="#FFA500" stroke-width="2"/>
+            <text x="150" y="98" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#8B4513">S</text>
+            
+            <!-- Heroic eyes -->
+            <ellipse cx="130" cy="75" rx="6" ry="4" fill="#FFFFFF"/>
+            <circle cx="132" cy="75" r="3" fill="#0066CC"/>
+            <circle cx="133" cy="74" r="1" fill="#FFFFFF"/>
+            
+            <ellipse cx="170" cy="75" rx="6" ry="4" fill="#FFFFFF"/>
+            <circle cx="168" cy="75" r="3" fill="#0066CC"/>
+            <circle cx="167" cy="74" r="1" fill="#FFFFFF"/>
+            
+            <!-- Heroic smile -->
+            <path d="M135 110 Q150 120 165 110" stroke="#8B4513" stroke-width="3" fill="none" stroke-linecap="round"/>
+            
+            <!-- Potato spots/dimples -->
+            <circle cx="120" cy="120" r="3" fill="#8B4513"/>
+            <circle cx="180" cy="115" r="2" fill="#8B4513"/>
+            <ellipse cx="110" cy="105" rx="2" ry="3" fill="#C8A882"/>
+            <ellipse cx="190" cy="100" rx="3" ry="2" fill="#C8A882"/>
+            
+            <!-- Sparkles around the super potato -->
+            <g fill="#FFD700">
+                <polygon points="50,30 52,35 57,35 53,38 55,43 50,40 45,43 47,38 43,35 48,35" />
+                <polygon points="250,40 252,45 257,45 253,48 255,53 250,50 245,53 247,48 243,45 248,45" />
+                <polygon points="270,120 272,125 277,125 273,128 275,133 270,130 265,133 267,128 263,125 268,125" />
+                <polygon points="30,140 32,145 37,145 33,148 35,153 30,150 25,153 27,148 23,145 28,145" />
+            </g>
+            
+            <!-- Power aura -->
+            <ellipse cx="150" cy="100" rx="85" ry="65" fill="none" stroke="#FFD700" stroke-width="1" opacity="0.5"/>
+            <ellipse cx="150" cy="100" rx="90" ry="70" fill="none" stroke="#FFD700" stroke-width="1" opacity="0.3"/>
+            
             <!-- Shadow/shading -->
             <ellipse cx="150" cy="100" rx="70" ry="50" fill="rgba(139,115,85,0.2)"/>
         </svg>
