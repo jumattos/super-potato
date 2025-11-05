@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 
 namespace MyApp
 {
@@ -19,12 +20,19 @@ namespace MyApp
             new Actor { Name = "Julia" }
         ];
 
-        static void Main(string[] args)
+        static async Task Main(string[] args)
         {
             if (TryFindActorByName("Julia"))
             {
                 Console.WriteLine("Julia found");
             }
+
+            Task.Run(async () =>
+            {
+                await GetActorFromServerAsync("Bianca");
+                await GetActorFromServerAsync("Hector");
+                await GetActorFromServerAsync("Jessica");
+            }).Wait();
         }
 
         /// <summary>
@@ -38,6 +46,12 @@ namespace MyApp
                 return true;
             }
             return false;
+        }
+
+        static async Task<Actor?> GetActorFromServerAsync(string name)
+        {
+            await Task.Delay(1000); // Simulate network delay
+            return actors.FirstOrDefault(a => string.Equals(a.Name, name));
         }
     }
 }
