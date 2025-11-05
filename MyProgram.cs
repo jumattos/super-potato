@@ -27,6 +27,10 @@ namespace MyApp
             }
         }
 
+        /// <summary>
+        /// Try to get the actor by name.
+        /// </summary>
+        /// <returns>Actor object, if found.</returns>
         static bool TryFindActorByName(string name)
         {
             if (actors.Any(a => string.Equals(a.Name, name)))
