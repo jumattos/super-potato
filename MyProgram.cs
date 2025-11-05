@@ -5,8 +5,8 @@ namespace MyApp
     internal class Program
     {
         private int counter = 0;
-        private var actors = new[]
-        {
+        private static Actor[] actors =
+        [
             new Actor { Name = "Alice" },
             new Actor { Name = "Bob" },
             new Actor { Name = "Charlie" },
@@ -17,7 +17,7 @@ namespace MyApp
             new Actor { Name = "Hannah" },
             new Actor { Name = "Ivan" },
             new Actor { Name = "Julia" }
-        };
+        ];
 
         static void Main(string[] args)
         {
@@ -29,7 +29,7 @@ namespace MyApp
 
         static bool TryFindActorByName(string name)
         {
-            if (this.actors.Any(a => string.Equals(a.Name, name)))
+            if (actors.Any(a => string.Equals(a.Name, name)))
             {
                 return true;
             }
