@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 
 namespace MyApp
 {
-    internal class Program
+    internal class Program // my comment is better
     {
         private int counter = 0;
         private static Actor[] actors =
@@ -13,8 +13,6 @@ namespace MyApp
             new Actor { Name = "Charlie" },
             new Actor { Name = "Diana" },
             new Actor { Name = "Ethan" },
-            new Actor { Name = "Fiona" },
-            new Actor { Name = "George" },
             new Actor { Name = "Hannah" },
             new Actor { Name = "Ivan" },
             new Actor { Name = "Julia" }

@@ -2,7 +2,7 @@
 
 namespace MyApp
 {
-    internal static partial class AsyncEnumerable
+    internal static partial class AsyncEnumerable // my comment is better
     {
         public static IAsyncEnumerable<T> Empty<T>() => EmptyAsyncEnumerable<T>.Instance;
 
