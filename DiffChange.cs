@@ -1,8 +1,8 @@
 alpha
 bravo
-charlie
-delta
-echo
+charlie!
+delta!
+echo!
 foxtrot
 golf
 hotel

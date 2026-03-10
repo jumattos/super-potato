@@ -15,7 +15,6 @@ namespace MyApp
             new Actor { Name = "Ethan" },
             new Actor { Name = "Fiona" },
             new Actor { Name = "George" },
-            new Actor { Name = "Hannah" },
             new Actor { Name = "Ivan" },
             new Actor { Name = "Julia" }
         ];
@@ -47,6 +46,8 @@ namespace MyApp
             }
             return false;
         }
+
+        // let's say both me and the other side added a line here...
 
         static async Task<Actor?> GetActorFromServerAsync(string name)
         {
