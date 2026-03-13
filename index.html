@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Super Potato Ranch</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="game-shell">
+    <header class="topbar panel">
+      <h1>🥔 Super Potato Ranch</h1>
+      <p>Plant, click-grow, harvest, and train heroic potatoes.</p>
+    </header>
+
+    <section class="stats panel">
+      <div class="stat"><span>Seeds</span><strong id="seeds">0</strong></div>
+      <div class="stat"><span>Potatoes</span><strong id="potatoes">0</strong></div>
+      <div class="stat"><span>Heroes</span><strong id="heroes">0</strong></div>
+      <div class="stat"><span>Coins</span><strong id="coins">0</strong></div>
+      <div class="stat"><span>Level</span><strong id="ranchLevel">1</strong></div>
+    </section>
+
+    <section class="content-grid">
+      <article class="panel farm-panel">
+        <h2>Farm Plot</h2>
+
+        <div class="farm-view">
+          <div class="sky"></div>
+          <div class="potato-sprite seed" id="farmSprite" aria-hidden="true"></div>
+          <div class="ground"></div>
+        </div>
+
+        <div class="progress-wrap">
+          <label for="growthBar">Growth</label>
+          <progress id="growthBar" max="100" value="0"></progress>
+          <span id="growthLabel">0%</span>
+        </div>
+
+        <p id="plotStatus" class="status-text">Your plot is empty. Plant a potato!</p>
+
+        <div class="actions">
+          <button id="plantBtn" type="button">Plant Potato</button>
+          <button id="clickGrowBtn" type="button">Click to Grow +3%</button>
+          <button id="harvestBtn" type="button">Harvest Potato</button>
+        </div>
+      </article>
+
+      <article class="panel training-panel">
+        <h2>Hero Academy</h2>
+
+        <div class="academy-view">
+          <div class="potato-sprite hero" id="academySprite" aria-hidden="true"></div>
+        </div>
+
+        <div class="progress-wrap">
+          <label for="trainingBar">Training</label>
+          <progress id="trainingBar" max="100" value="0"></progress>
+          <span id="trainingLabel">0%</span>
+        </div>
+
+        <p id="trainingStatus" class="status-text">No trainee yet. Harvest a potato first.</p>
+
+        <div class="actions">
+          <button id="startTrainingBtn" type="button">Start Training</button>
+          <button id="cheerBtn" type="button">Cheer Trainee +4%</button>
+          <button id="buySeedBtn" type="button">Buy Seed (4 coins)</button>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
