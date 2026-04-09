@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Super Potato</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            justify-content: center;
+        }
+        
+        .container {
+            text-align: center;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+        }
+        
+        h1 {
+            color: #8B4513;
+            margin-bottom: 20px;
+            font-size: 2.5em;
+        }
+        
+        .potato-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin: 20px 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            background-color: #f9f9f9;
+            padding: 10px;
+        }
+        
+        .description {
+            color: #666;
+            font-size: 1.2em;
+            margin-top: 20px;
+            line-height: 1.5;
+        }
+        
+        .subtitle {
+            color: #999;
+            font-style: italic;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🥔 Super Potato</h1>
+        <p class="subtitle">A simple web app showcasing the magnificent potato</p>
+        
+        <svg width="300" height="200" viewBox="0 0 300 200" class="potato-image">
+            <!-- Cape -->
+            <path d="M80 90 Q60 70 50 50 Q70 40 90 50 Q100 70 110 90 Z" fill="#DC143C" stroke="#B22222" stroke-width="2"/>
+            <path d="M190 90 Q220 70 230 50 Q210 40 190 50 Q180 70 170 90 Z" fill="#DC143C" stroke="#B22222" stroke-width="2"/>
+            
+            <!-- Potato body (heroic stance) -->
+            <ellipse cx="150" cy="100" rx="80" ry="60" fill="#D2B48C" stroke="#8B7355" stroke-width="2"/>
+            
+            <!-- Super emblem on chest -->
+            <circle cx="150" cy="118" r="20" fill="#FFD700" stroke="#FFA500" stroke-width="2"/>
+            <text x="150" y="126" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#8B4513">S</text>
+            
+            <!-- Heroic eyes -->
+            <ellipse cx="130" cy="75" rx="6" ry="4" fill="#FFFFFF"/>
+            <circle cx="132" cy="75" r="3" fill="#0066CC"/>
+            <circle cx="133" cy="74" r="1" fill="#FFFFFF"/>
+            
+            <ellipse cx="170" cy="75" rx="6" ry="4" fill="#FFFFFF"/>
+            <circle cx="168" cy="75" r="3" fill="#0066CC"/>
+            <circle cx="167" cy="74" r="1" fill="#FFFFFF"/>
+            
+            <!-- Heroic smile -->
+            <path d="M135 87 Q150 95 165 87" stroke="#8B4513" stroke-width="3" fill="none" stroke-linecap="round"/>
+            
+            <!-- Potato spots/dimples -->
+            <circle cx="120" cy="120" r="3" fill="#8B4513"/>
+            <circle cx="180" cy="115" r="2" fill="#8B4513"/>
+            <ellipse cx="110" cy="105" rx="2" ry="3" fill="#C8A882"/>
+            <ellipse cx="190" cy="100" rx="3" ry="2" fill="#C8A882"/>
+            
+            <!-- Sparkles around the super potato -->
+            <g fill="#FFD700">
+                <polygon points="50,30 52,35 57,35 53,38 55,43 50,40 45,43 47,38 43,35 48,35" />
+                <polygon points="250,40 252,45 257,45 253,48 255,53 250,50 245,53 247,48 243,45 248,45" />
+                <polygon points="270,120 272,125 277,125 273,128 275,133 270,130 265,133 267,128 263,125 268,125" />
+                <polygon points="30,140 32,145 37,145 33,148 35,153 30,150 25,153 27,148 23,145 28,145" />
+            </g>
+            
+            <!-- Power aura -->
+            <ellipse cx="150" cy="100" rx="85" ry="65" fill="none" stroke="#FFD700" stroke-width="1" opacity="0.5"/>
+            <ellipse cx="150" cy="100" rx="90" ry="70" fill="none" stroke="#FFD700" stroke-width="1" opacity="0.3"/>
+            
+            <!-- Shadow/shading -->
+            <ellipse cx="150" cy="100" rx="70" ry="50" fill="rgba(139,115,85,0.2)"/>
+        </svg>
+        
+        <div class="description">
+            <p>Behold the mighty potato! This versatile tuber has fed civilizations and continues to be one of the world's most important food crops.</p>
+            <p>From french fries to mashed potatoes, from chips to gnocchi - the possibilities are endless!</p>
+        </div>
+    </div>
+</body>
+</html>
