@@ -1,0 +1,9 @@
+{
+  "name": "super-potato-ranch",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "node --check script.js",
+    "test": "node --test --experimental-test-coverage tests/script.test.js"
+  }
+}

@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#302319" />
   <title>Super Potato Ranch</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -12,24 +13,41 @@
 <body>
   <main class="game-shell">
     <header class="topbar panel">
-      <h1>🥔 Super Potato Ranch</h1>
-      <p>Plant, click-grow, harvest, and train heroic potatoes.</p>
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true">🥔</span>
+        <div>
+          <p class="eyebrow">Welcome to</p>
+          <h1>Super Potato Ranch</h1>
+        </div>
+      </div>
+      <div class="rank">
+        <span id="rankName">Sprout Ranch</span>
+        <small id="rankProgress">3 heroes until the next ranch level</small>
+      </div>
     </header>
 
-    <section class="stats panel">
-      <div class="stat"><span>Seeds</span><strong id="seeds">0</strong></div>
-      <div class="stat"><span>Potatoes</span><strong id="potatoes">0</strong></div>
-      <div class="stat"><span>Heroes</span><strong id="heroes">0</strong></div>
-      <div class="stat"><span>Coins</span><strong id="coins">0</strong></div>
-      <div class="stat"><span>Level</span><strong id="ranchLevel">1</strong></div>
+    <section class="stats panel" aria-label="Ranch resources">
+      <div class="stat"><span>🌱 Seeds</span><strong id="seeds">0</strong></div>
+      <div class="stat"><span>🥔 Potatoes</span><strong id="potatoes">0</strong></div>
+      <div class="stat"><span>🦸 Heroes</span><strong id="heroes">0</strong></div>
+      <div class="stat"><span>🪙 Coins</span><strong id="coins">0</strong></div>
+      <div class="stat"><span>⭐ Level</span><strong id="ranchLevel">1</strong></div>
     </section>
 
     <section class="content-grid">
-      <article class="panel farm-panel">
-        <h2>Farm Plot</h2>
+      <article class="panel work-panel">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Step one</p>
+            <h2>Farm Plot</h2>
+          </div>
+          <span class="sign">FIELD 01</span>
+        </div>
 
         <div class="farm-view">
-          <div class="sky"></div>
+          <div class="cloud cloud-one"></div>
+          <div class="cloud cloud-two"></div>
+          <div class="mountains"></div>
           <div class="potato-sprite seed" id="farmSprite" aria-hidden="true"></div>
           <div class="ground"></div>
         </div>
@@ -44,16 +62,24 @@
 
         <div class="actions">
           <button id="plantBtn" type="button">Plant Potato</button>
-          <button id="clickGrowBtn" type="button">Click to Grow +3%</button>
+          <button id="clickGrowBtn" type="button">Water +3%</button>
           <button id="harvestBtn" type="button">Harvest Potato</button>
         </div>
       </article>
 
-      <article class="panel training-panel">
-        <h2>Hero Academy</h2>
+      <article class="panel work-panel">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Step two</p>
+            <h2>Hero Academy</h2>
+          </div>
+          <span class="sign">ENROLL</span>
+        </div>
 
         <div class="academy-view">
+          <div class="academy-banner">SP</div>
           <div class="potato-sprite hero" id="academySprite" aria-hidden="true"></div>
+          <span class="training-dummy" aria-hidden="true">✦</span>
         </div>
 
         <div class="progress-wrap">
@@ -66,10 +92,67 @@
 
         <div class="actions">
           <button id="startTrainingBtn" type="button">Start Training</button>
-          <button id="cheerBtn" type="button">Cheer Trainee +4%</button>
-          <button id="buySeedBtn" type="button">Buy Seed (4 coins)</button>
+          <button id="cheerBtn" type="button">Cheer +4%</button>
+          <button id="buySeedBtn" class="secondary" type="button">Buy Seed · 4 coins</button>
         </div>
       </article>
+    </section>
+
+    <section class="ranch-grid">
+      <article class="panel homestead-panel">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Your graduates</p>
+            <h2>Hero Homestead</h2>
+          </div>
+          <span class="sign" id="availableHeroes">0 READY</span>
+        </div>
+        <p class="section-copy">Every academy graduate has a home here. Send rested heroes on ranch missions.</p>
+        <div id="heroRoster" class="hero-roster"></div>
+        <div id="emptyRoster" class="empty-state">
+          <span aria-hidden="true">🏚️</span>
+          <strong>The bunks are quiet</strong>
+          <p>Train your first potato hero to bring the homestead to life.</p>
+        </div>
+      </article>
+
+      <article class="panel quest-panel">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Step three</p>
+            <h2>Quest Board</h2>
+          </div>
+          <span class="sign">WANTED</span>
+        </div>
+        <p class="section-copy">Choose a ready hero, then put their training to work.</p>
+
+        <label class="hero-picker" for="heroSelect">
+          Assign hero
+          <select id="heroSelect"></select>
+        </label>
+
+        <div id="questList" class="quest-list"></div>
+
+        <div id="activeQuest" class="active-quest" hidden>
+          <div>
+            <span class="eyebrow">Mission underway</span>
+            <strong id="activeQuestName"></strong>
+          </div>
+          <span id="questTimer"></span>
+          <progress id="questBar" max="100" value="0"></progress>
+        </div>
+      </article>
+    </section>
+
+    <section class="panel journal-panel">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Latest news</p>
+          <h2>Ranch Journal</h2>
+        </div>
+        <span class="autosave">● Autosaved locally</span>
+      </div>
+      <ul id="activityLog" class="activity-log" aria-live="polite"></ul>
     </section>
   </main>
 

@@ -6,6 +6,11 @@ Super Potato Ranch is a pixel-art inspired idle/clicker game where you:
 - Click to grow them faster
 - Harvest mature potatoes for coins
 - Train harvested potatoes into superheroes
+- Keep every graduate in your Hero Homestead
+- Dispatch available heroes on timed quests for rewards
+- Grow your ranch level to unlock new quests and stronger actions
+
+Progress is saved automatically in your browser.
 
 ## Run locally
 
