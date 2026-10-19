@@ -7,18 +7,18 @@ public class ClassTests
     [Fact]
     public void Name_GetSet_Works()
     {
-        var c = new Class();
-        c.Name = "Sample";
-        Assert.Equal("Sample", c.Name);
+        var actor = new Actor();
+        actor.Name = "Sample";
+        Assert.Equal("Sample", actor.Name);
     }
 
     [Theory]
     [InlineData("")]
     [InlineData("Test")]
-    [InlineData("Another Name")]    
+    [InlineData("Another Name")]
     public void Name_VariousValues_RoundTrip(string value)
     {
-        var c = new Class { Name = value };
-        Assert.Equal(value, c.Name);
+        var actor = new Actor { Name = value };
+        Assert.Equal(value, actor.Name);
     }
 }
